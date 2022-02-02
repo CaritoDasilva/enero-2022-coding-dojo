@@ -1,0 +1,19 @@
+/* DRY */
+/* DONT */
+/* REPEAT */
+/* YOURSELF */
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#title {
+    color: aquamarine;
+}
+
+.form-label {
+    font-size: 10px;
+}

@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.first-navbar {
+    background-color: #00446F;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-navbar-sections {
+    width: 40%;
+    display: flex;
+}
+
+ul, li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.first-navbar-sections li {
+    margin: 0 2%;
+    white-space: nowrap;
+}
+
+.right-section-first-navbar {
+    justify-content: flex-end;
+    margin-right: 3%;
+}
+
+.secondary-navbar {
+    background-color: #0079BF;
+    height: 52px;
+}
+
+.cards-trello-container {
+    background-color: #0079BF;
+    height: 555px;
+}
+
+.icons {
+    width: 20px;
+    height: 20px;
+}
+
+.title-trello {
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.create-btn {
+    background-color: rgba(0, 0, 0, 0.24);
+    border-radius: 3px;
+    border: 0;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    box-shadow: none;
+    color: #FFFFFF;
+    display: flex;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 0 0;
+    padding: 0;
+    white-space: nowrap;
+    width: 60px;
+}
+
+.input-search {
+    width: 250px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding-right: 8px;
+    padding-left: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.profile-pic-container {
+    margin: 0 8px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 28px;
+    height: auto;
+}
+
+.secondary-navbar-btn-container {
+    margin-left: 1%;
+}
+
+.btn-secondary-navbar {
+    height: 32px;
+    background-color: #5CA7D4;
+    color: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+    text-decoration: none;
+    white-space: normal;
+    box-shadow: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+.invite-btn {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    background-color: #E9F3F9;
+    color: #393f48;
+}
+
+.btn-secondary-navbar i {
+    margin-right: 12%;
+}
+
+.secondary-navbar-btn-container {
+    display: flex;
+
+}
+
+.secondary-navbar-btn-container li {
+    margin: 10px 2px;
+}
+
+.border-divisor {
+    border-left: 1px solid #ffffff3d;
+    float: left;
+    height: 16px;
+    margin: 8px 8px 12px 4px;
+}
