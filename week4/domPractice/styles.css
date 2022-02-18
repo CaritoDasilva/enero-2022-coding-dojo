@@ -1,0 +1,22 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+form {
+    width: 40%;
+}
+
+button {
+    margin-top: 5%;
+}
+
+.post-card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 2%;
+    height: 50px;
+    border-radius: 9px;
+    padding: 9px;
+}

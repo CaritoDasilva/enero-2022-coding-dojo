@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    min-height: 100vh;
+}
+
+h1, h3 {
+    font-family: 'Rowdies', cursive;
+    color: #D9D9D9;
+}
+
+.container {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sections {
+    height: 100vh;
+}
+
+.section-left {
+    width: 54%;
+    background-image: url('https://abs.twimg.com/sticky/illustrations/lohp_1302x955.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-right {
+    width: 46%;
+    background-color: #000000;
+    padding: 36px;
+}
+
+.logo-container img {
+    width: 42px;
+    height: auto;
+}
+
+.title-container {
+    margin: 48px 0;
+}
+
+.title-container h1 {
+    font-size: 75px;
+}
+
+.subtitle-container h3 {
+    margin-bottom: 32px;
+    font-size: 37px;
+}
+
+.rrss-btn-container {
+    margin: 9px 0;
+}
+
+.btn-register-container button {
+    width: 300px;
+    max-width: 400px;
+    min-width: min-content;
+    cursor: pointer;
+    font-size: 14px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.rrss-btn-container button {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dadce0;
+    color: #3c4043;
+
+
+}
+
+.rrss-btn-container button img {
+    width: 18px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.phone-btn-container {
+    margin-top: 28px;
+}
+
+.phone-btn-container button {
+    background-color: #1A8CD8;
+    color: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.terms-text {
+    max-width: 380px;
+    font-size: 11px;
+    width: 300px;
+    margin-top: 9px;
+    color: #D9D9D9;
+}
+
+.login-btn button {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border: 1px solid #c1bfbf;
+}
