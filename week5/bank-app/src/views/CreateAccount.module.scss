@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+    
+    button {
+        margin-top: 3%;
+        border: none;
+        height: 33px;
+        border-radius: 7px;
+    }
+}
+
+.errMsg {
+    color: red;
+    font-size: 14px;
+}
