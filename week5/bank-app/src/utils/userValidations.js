@@ -1,6 +1,34 @@
 class UserValidations {
     constructor(){}
 
+    validate(form) {
+        Object.keys(form).map(inputName => {
+            if(inputName === 'rut') {
+                console.log('llegué hasta acá', form[inputName][0])
+                const isValidRut = this.validateRut(form[inputName][0])
+                console.log("🚀 ~ file: userValidations.js ~ line 9 ~ UserValidations ~ Object.keys ~ isValidRut", isValidRut)
+                return isValidRut;
+            } else {
+                return {
+                    status: true,
+                    error: ''
+                }
+            }
+        })
+        // const isAEmptyString = Object.values(form).filter(val => val[0] === '');
+        // if(isAEmptyString.length > 0) {
+        //     return {
+        //         status: false,
+        //         err: 'Todos los campos del formulario son obligatorios'
+        //     } 
+        // } else {
+        //     return {
+        //         status: true,
+        //         err: ''
+        //     } 
+        // }
+    }
+
     validateName(name) {
         if(name === '') {
             return {
@@ -18,6 +46,38 @@ class UserValidations {
                 status: true
             }
         }
+    }
+
+    minCharacters(string) {
+        if(string.length < 3) {
+            return 'Debe tener mínimo 3 caracteres'
+        } else {
+            return ''
+        }
+    }
+
+    validateRut(name){
+        console.log("🚀 ~ file: userValidations.js ~ line 53 ~ UserValidations ~ validateRut ~ name", name)
+        if(name === ''){
+            return {
+                status: false,
+                err: 'Debes ingresar un rut'
+            }
+        }
+        if(!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(name)){
+            console.log("🚀 ~ file: userValidations.js ~ line 61 ~ UserValidations ~ validateRut ~ name", name)
+
+            return {
+                status: false,
+                err: 'Debes ingresar un rut correcto'
+            } 
+        } else {
+            return {
+                status: true,
+                err: ''
+            }
+        }
+
     }
 }
 
