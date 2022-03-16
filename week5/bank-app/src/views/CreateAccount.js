@@ -29,11 +29,11 @@ const CreateAccount = () => {
         // const isValid = userValidations.validateName(user.userName[0])
         // !isValid.status ? setUser({ ...user, userName: [...user.userName[0], isValid.err] }) : setErr('');
         // console.log("🚀 ~ file: CreateAccount.js ~ line 26 ~ createAccount ~ isValid", isValid)
-        if(!isValidForm.status) {
-            setErr(isValidForm.err)
-        } else {
-            setErr(isValidForm.err)
-        }
+        // if(!isValidForm.status) {
+        //     setErr(isValidForm.err)
+        // } else {
+        //     setErr(isValidForm.err)
+        // }
     }
     
     useEffect(() => {

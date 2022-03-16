@@ -2,19 +2,15 @@ class UserValidations {
     constructor(){}
 
     validate(form) {
-        Object.keys(form).map(inputName => {
+        const isValidForm = Object.keys(form).map(inputName => {
             if(inputName === 'rut') {
                 console.log('llegué hasta acá', form[inputName][0])
-                const isValidRut = this.validateRut(form[inputName][0])
-                console.log("🚀 ~ file: userValidations.js ~ line 9 ~ UserValidations ~ Object.keys ~ isValidRut", isValidRut)
-                return isValidRut;
-            } else {
-                return {
-                    status: true,
-                    error: ''
-                }
-            }
+                return this.validateRut(form[inputName][0])
+            } 
         })
+        console.log("🚀 ~ file: userValidations.js ~ line 16 ~ UserValidations ~ isValidForm ~ isValidForm", isValidForm.find(v => v?.status))
+        
+        return isValidForm;
         // const isAEmptyString = Object.values(form).filter(val => val[0] === '');
         // if(isAEmptyString.length > 0) {
         //     return {
