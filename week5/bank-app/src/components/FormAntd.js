@@ -3,7 +3,7 @@ import { Form, Input, Button } from 'antd';
 import styles from './FormAntd.module.scss';
 import Account from "../services/account/account";
 
-const FormAntd = (accounts, setAccounts) => {
+const FormAntd = ({ accounts, setAccounts }) => {
     const [user, setUser] = useState({
         userName: '',
         rut: '',
@@ -27,6 +27,7 @@ const FormAntd = (accounts, setAccounts) => {
     const onFinish = (values) => {
         console.log('Success:', values);
         const account = new Account(values.userName, values.rut, 100000);
+        console.log("🚀 ~ file: FormAntd.js ~ line 30 ~ onFinish ~ account", [...accounts, account])
         setAccounts([...accounts, account]);
     };
     
