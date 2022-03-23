@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import { getAllCharacters } from '../services/charactersService';
+import styles from './Characters.module.scss';
 const Characters = () => {
     const [characters, setCharacters] = useState([]);
 
     const getApiResponse = async () => {
         const response = await getAllCharacters();
-        const charactersApi = await response.json();
-        console.log("🚀 ~ file: Characters.js ~ line 7 ~ getApiResponse ~ characters", characters)
-        setCharacters(charactersApi.results);
+        console.log("🚀 ~ file: Characters.js ~ line 8 ~ getApiResponse ~ response", response)
+        // const charactersApi = await response.json();
+        // console.log("🚀 ~ file: Characters.js ~ line 7 ~ getApiResponse ~ characters", characters)
+        setCharacters(response.results);
         // catch(err => console.log(err));
     }
 
@@ -19,10 +22,12 @@ const Characters = () => {
         <div>
             <h1>Resultados API Rick and Morty</h1>
             {characters.map((character, i) => 
-                <div key={i}>
-                    <h1>{character.name}</h1>
-                    <img src={character.image} alt="" />
-                </div>
+                <Link key={i} to={`/character/${character.id}`}>
+                    <div className={styles.card}>
+                            <h1>{character.name}</h1>
+                            <img src={character.image} alt="" />                        
+                    </div>
+                </Link>
             )}
         </div>
     )
