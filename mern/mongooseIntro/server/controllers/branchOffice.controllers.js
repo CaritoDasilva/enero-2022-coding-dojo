@@ -47,7 +47,7 @@ module.exports.updateBranchOffice = (req, res) => {
 //Método que agrega instructores a una sucursal
 
 module.exports.addInstructors = (req, res) => {
-    BranchOffice.findOneAndUpdate({ _id: req.params.id }, { $addToSet: { instructors: req.body.instructors } }, { new: true })
+    BranchOffice.findOneAndUpdate({ _id: req.params.id }, { $push: { instructors: { $each: req.body.instructors } } }, { new: true })
         .then(result => res.json({ result }))
         .catch(err => res.status(500).json({ err }));
 }
