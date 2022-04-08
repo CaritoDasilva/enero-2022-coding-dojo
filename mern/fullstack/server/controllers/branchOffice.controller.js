@@ -9,6 +9,8 @@ module.exports.createNewBranchOffice = (req, res) => {
         .catch(err => res.status(500).json({ error: err }));
 }
 
+// Método que trae todas las sucursales
+
 module.exports.getAllBrangOffices = (req, res) => {
     BranchOffice.find()
         .then(branchOffices => res.json({ branchOffices }))
