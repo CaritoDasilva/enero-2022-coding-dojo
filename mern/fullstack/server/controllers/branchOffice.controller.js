@@ -16,3 +16,18 @@ module.exports.getAllBrangOffices = (req, res) => {
         .then(branchOffices => res.json({ branchOffices }))
         .catch(err => res.status(500).json({ error: err }));
 }
+
+//Método que trae una sucursal
+module.exports.getSingleBranchOffice = (req, res) => {
+    BranchOffice.findById(req.params.id)
+        .then(branchOffices => res.json({ branchOffices }))
+        .catch(err => res.status(500).json({ err }));
+}
+
+//Método para borrar una sucursal
+
+module.exports.deleteBranchOffice = (req, res) => {
+    BranchOffice.deleteOne({ _id: req.params.id })
+        .then(result => res.json({ result }))
+        .catch(err => res.status(500).json({ err }));
+}

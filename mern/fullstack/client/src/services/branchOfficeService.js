@@ -22,7 +22,31 @@ const createNewBranchOffice = async (data) => {
     }
 }
 
+const getOneBranchOffice = async (id) => {
+     try {
+
+        const response = await axios.get(`http://localhost:8000/api/branchoffice/${id}`);
+        return response.data;
+
+    } catch(err) {
+        return err;
+    }
+}
+
+const deleteOneBranchOffice = async (id) => {
+    try {
+
+        const response = await axios.delete(`http://localhost:8000/api/branchoffice/delete/${id}`);
+        return response.data;
+
+    } catch(err) {
+        return err;
+    }
+}
+
 module.exports = {
     getAllBranchOffices,
     createNewBranchOffice,
+    getOneBranchOffice,
+    deleteOneBranchOffice,
 }
