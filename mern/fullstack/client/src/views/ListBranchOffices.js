@@ -3,9 +3,10 @@ import { deleteOneBranchOffice, getAllBranchOffices } from '../services/branchOf
 // import { Table, Tag, Space, Button } from 'antd';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-const ListBranchOffices = () => {
+const ListBranchOffices = ({props}) => {
+console.log("🚀 ~ file: ListBranchOffices.js ~ line 9 ~ ListBranchOffices ~ props", props)
     const navigate = useNavigate();
     const [branchOffices, setBranchOffices] = useState([]);
     const [error, setError] = useState('');
@@ -20,9 +21,9 @@ const ListBranchOffices = () => {
         }
     }
 
-    const goToDetailPage = (id) => {
-        navigate(`/sucursal/${id}`);
-    }
+    // const goToDetailPage = (id) => {
+    //     navigate(`/sucursal/${id}`);
+    // }
 
     const deleteBranchOfficeFromService = async (id) => {
         try {
@@ -117,6 +118,7 @@ const ListBranchOffices = () => {
 
     return (
         <div>
+            <Link to={"/new-branch-office"}>Crear nueva sucursal</Link>
             {/* <Table columns={columns} dataSource={dataTable} className="branch-offices-table" /> */}
             <Table striped bordered hover>
                 <thead>
@@ -131,14 +133,14 @@ const ListBranchOffices = () => {
                 <tbody>
                    {
                         branchOffices?.map(bo => (
-                            <tr>
+                            <tr key={bo._id}>
                                 <td>{bo.name}</td>
                                 <td>{bo.address}</td>
-                                <td>{bo.instructors.map(instructor => <p>{instructor}</p>)}</td>
-                                <td>{bo.stacks.map(stack => <p>{stack}</p>)}</td>
+                                <td>{bo.instructors.map((instructor, id) => <p key={id}>{instructor}</p>)}</td>
+                                <td>{bo.stacks.map((stack, idx) => <p key={idx}>{stack}</p>)}</td>
                                 <td>
-                                    <Button variant="info" onClick={() => goToDetailPage(bo._id)}>Ver detalle</Button>
-                                    <Button variant="dark">Editar</Button>
+                                    <Button variant="info" onClick={() => navigate(`/sucursal/${bo._id}}`)}>Ver detalle</Button>
+                                    <Button variant="dark" onClick={() => navigate(`/editar/branch-office/${bo._id}`)}>Editar</Button>
                                     <Button variant="danger" onClick={() => deleteBranchOfficeFromService(bo._id)}>Eliminar</Button>
                                 </td>
                             </tr>

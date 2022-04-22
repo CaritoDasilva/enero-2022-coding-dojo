@@ -17,3 +17,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.errosMsgContainer {
+  background-color: #FFBABA;
+  padding: 8px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+
+  .errosMsg {
+    color: red;
+  }
+}

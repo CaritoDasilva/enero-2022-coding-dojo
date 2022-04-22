@@ -31,3 +31,14 @@ module.exports.deleteBranchOffice = (req, res) => {
         .then(result => res.json({ result }))
         .catch(err => res.status(500).json({ err }));
 }
+
+// Método para actualizar una sucursal
+
+module.exports.updateBranchOffice = (req, res) => {
+    BranchOffice.findByIdAndUpdate(req.params.id, req.body.data, { new: true })
+        .then(result => {
+            console.log(result);
+            return res.json({ result })
+        })
+        .catch(err => res.status(500).json({ err }))
+};

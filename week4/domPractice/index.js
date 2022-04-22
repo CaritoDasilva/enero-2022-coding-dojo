@@ -19,3 +19,14 @@ const sendPost = () => {
     
     console.log(postsContainer)
 };
+
+function changeProfilPic(element) {    
+    // const img = document.createElement('img');
+    // img.src = 'https://ps.w.org/metronet-profile-picture/assets/icon-256x256.png?rev=2464419'
+    element.src = 'https://ps.w.org/metronet-profile-picture/assets/icon-256x256.png?rev=2464419'
+}
+
+function changeFunnyPic(element) {
+    element.src = 'https://cdn.dribbble.com/users/844597/screenshots/9008058/media/a8bfc3cd2e71a304a02d8729bcffa132.png?compress=1&resize=400x300';
+
+}

@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-const getAllBranchOffices = async () => {
+export const getAllBranchOffices = async () => {
     try {
 
-        const response = await axios.get('http://localhost:8000/api/branchoffice');
+        const response = await axios.get('/api/branchoffice');
         return response.data;
 
     } catch(err) {
@@ -11,10 +11,10 @@ const getAllBranchOffices = async () => {
     }
 } 
 
-const createNewBranchOffice = async (data) => {
+export const createNewBranchOffice = async (data) => {
     try {
         console.log('toy pasando', data)
-        const response = await axios.post('http://localhost:8000/api/branchoffice/new', { data });
+        const response = await axios.post('/api/branchoffice/new', { data });
         return response.data;
 
     } catch(err) {
@@ -22,10 +22,10 @@ const createNewBranchOffice = async (data) => {
     }
 }
 
-const getOneBranchOffice = async (id) => {
+export const getOneBranchOffice = async (id) => {
      try {
 
-        const response = await axios.get(`http://localhost:8000/api/branchoffice/${id}`);
+        const response = await axios.get(`/api/branchoffice/${id}`);
         return response.data;
 
     } catch(err) {
@@ -33,10 +33,10 @@ const getOneBranchOffice = async (id) => {
     }
 }
 
-const deleteOneBranchOffice = async (id) => {
+export const deleteOneBranchOffice = async (id) => {
     try {
 
-        const response = await axios.delete(`http://localhost:8000/api/branchoffice/delete/${id}`);
+        const response = await axios.delete(`/api/branchoffice/delete/${id}`);
         return response.data;
 
     } catch(err) {
@@ -44,9 +44,14 @@ const deleteOneBranchOffice = async (id) => {
     }
 }
 
-module.exports = {
-    getAllBranchOffices,
-    createNewBranchOffice,
-    getOneBranchOffice,
-    deleteOneBranchOffice,
+export const editOneBranchOffice = async (id, data) => {
+console.log("🚀 ~ file: branchOfficeService.js ~ line 48 ~ editOneBranchOffice ~ data", data)
+    try {
+
+        const response = await axios.put(`/api/branchoffice/update/${id}`, { data });
+        return response.data;
+
+    } catch(err) {
+        return err;
+    }
 }
